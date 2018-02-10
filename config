@@ -8,6 +8,10 @@
 
 [core]
     editor = vim
+    excludesfile = ~/.config/git/excludesfile
+
+[gpg]
+    program = gpg2
 
 [push]
     default = simple
@@ -58,10 +62,10 @@
 # Include
 
 [include]
-    path = ~/.gituserconfig
+    path = ~/.config/git/gituserconfig
 
 [include]
-    path = ~/.gitconfig.local
+    path = ~/.local/git/gitconfig
 
 ##############################################################################
 # vim: ft=gitconfig

@@ -20,6 +20,15 @@ pkg.install() {
 
 ##############################################################################
 
+pkg.link() {
+    mkdir -p "$ELLIPSIS_HOME/.config"
+
+    # Link package into ~/.config/git
+    fs.link_file "$PKG_PATH" "$ELLIPSIS_HOME/.config/git"
+}
+
+##############################################################################
+
 pkg.pull() {
     # Use improved update strategy
     git remote update 2>&1 > /dev/null
@@ -28,6 +37,16 @@ pkg.pull() {
         git.pull
         pkg.link
     fi
+}
+
+##############################################################################
+
+pkg.unlink() {
+    # Remove config dir
+    rm "$ELLIPSIS_HOME/.config/git"
+
+    # Remove all links in the home folder
+    hooks.unlink
 }
 
 ##############################################################################
