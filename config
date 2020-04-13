@@ -61,6 +61,9 @@
 [url "ssh://git@gitlab.com/"]
     insteadOf = sgl:
 
+[url "git@gitlab.com:"]
+ insteadOf = https://gitlab.com/
+
 ##############################################################################
 # Include
 
